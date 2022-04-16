@@ -74,11 +74,13 @@ void opcion3(float kilometros, float precioLatam, float precioAerolineas, float*
 		*precioUnitarioAerolineas = precioAerolineas/kilometros;
 }
 
-void opcion4(float precioDebitoLatam, float precioDebitoAerolineas, float precioCreditoLatam, float precioCreditoAerolineas, float precioBitcoinLatam, float precioBitcoinAerolineas, float precioUnitarioLatam, float precioUnitarioAerolineas, float diferenciaPrecios)
+void opcion4(float kilometros, float precioDebitoLatam, float precioDebitoAerolineas, float precioCreditoLatam, float precioCreditoAerolineas, float precioBitcoinLatam, float precioBitcoinAerolineas, float precioUnitarioLatam, float precioUnitarioAerolineas, float diferenciaPrecios)
 {
 	if(precioUnitarioLatam > 1 && precioUnitarioAerolineas > 1)
 	{
-		printf(		"\nLatam: \nPrecio con tarjeta de debito: $ %.2f"
+		printf(		"Kilometros: %.2f"
+
+					"\nLatam: \nPrecio con tarjeta de debito: $ %.2f"
 					"\nPrecio con tarjeta de credito: $ %.2f"
 					"\nPrecio pagando con bitcoin : BTC %f"
 					"\nPrecio unitario: $ %.2f"
@@ -89,7 +91,7 @@ void opcion4(float precioDebitoLatam, float precioDebitoAerolineas, float precio
 					"\nPrecio pagando con bitcoin : BTC %f"
 					"\nPrecio unitario: $ %.2f"
 
-					"\n\nLa diferencia de precio es : $ %.2f \n", precioDebitoLatam, precioCreditoLatam, precioBitcoinLatam, precioUnitarioLatam, precioDebitoAerolineas, precioCreditoAerolineas, precioBitcoinAerolineas, precioUnitarioAerolineas, diferenciaPrecios);
+					"\n\nLa diferencia de precio es : $ %.2f \n", kilometros, precioDebitoLatam, precioCreditoLatam, precioBitcoinLatam, precioUnitarioLatam, precioDebitoAerolineas, precioCreditoAerolineas, precioBitcoinAerolineas, precioUnitarioAerolineas, diferenciaPrecios);
 
 	}
 	else

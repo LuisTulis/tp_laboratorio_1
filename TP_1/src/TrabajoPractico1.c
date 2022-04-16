@@ -12,7 +12,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "aerolinea.h"
-#include <math.h>
 
 
 int main(void)
@@ -68,14 +67,14 @@ int main(void)
 			opcion3(kilometros, precioLatam, precioAerolineas, &precioDebitoLatam, &precioDebitoAerolineas, &precioCreditoLatam, &precioCreditoAerolineas, &precioBitcoinLatam, &precioBitcoinAerolineas, &precioUnitarioLatam, &precioUnitarioAerolineas, &diferenciaPrecios);
 			break;
 		case 4:
-			opcion4(precioDebitoLatam, precioDebitoAerolineas, precioCreditoLatam, precioCreditoAerolineas, precioBitcoinLatam, precioBitcoinAerolineas, precioUnitarioLatam, precioUnitarioAerolineas, diferenciaPrecios);
+			opcion4(kilometros, precioDebitoLatam, precioDebitoAerolineas, precioCreditoLatam, precioCreditoAerolineas, precioBitcoinLatam, precioBitcoinAerolineas, precioUnitarioLatam, precioUnitarioAerolineas, diferenciaPrecios);
 			break;
 		case 5:
 			kilometros = 7090.0;
 			precioAerolineas = 162965.00;
 			precioLatam = 159339.0;
 			opcion3(kilometros, precioLatam, precioAerolineas, &precioDebitoLatam, &precioDebitoAerolineas, &precioCreditoLatam, &precioCreditoAerolineas, &precioBitcoinLatam, &precioBitcoinAerolineas, &precioUnitarioLatam, &precioUnitarioAerolineas, &diferenciaPrecios);
-			opcion4(precioDebitoLatam, precioDebitoAerolineas, precioCreditoLatam, precioCreditoAerolineas, precioBitcoinLatam, precioBitcoinAerolineas, precioUnitarioLatam, precioUnitarioAerolineas, diferenciaPrecios);
+			opcion4(kilometros, precioDebitoLatam, precioDebitoAerolineas, precioCreditoLatam, precioCreditoAerolineas, precioBitcoinLatam, precioBitcoinAerolineas, precioUnitarioLatam, precioUnitarioAerolineas, diferenciaPrecios);
 			break;
 		case 6:
 			printf("\nSaliendo del sistema. . .");
