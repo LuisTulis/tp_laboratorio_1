@@ -2,7 +2,7 @@
  * aerolinea.h
  *
  *  Created on: 7 abr. 2022
- *      Author: Luis
+ *      Author: Tulis Curra Luis, DIV D
  */
 
 #ifndef AEROLINEA_H_

@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : TP1.c
- Author      : 
+ Author      : Tulis Curra Luis, DIV D
  Version     :
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
