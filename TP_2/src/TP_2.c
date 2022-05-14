@@ -194,11 +194,7 @@ int main(void)
 			case 3:
 			{
 				rellenarInt(&idABuscar, "\nIngrese el id a borrar.\n", "\nError, ingrese un numero.\n");
-				if(posicionDada == -1)
-				{
-					printf("Id no encontrado.");
-					break;
-				}
+
 				mostrarPasajero(pasajeros, largo, idABuscar);
 
 				rellenarInt(&confirmarAccion, "Es el pasajero con dicha id, ¿seguro que quiere eliminarlo? \n1-Si \n2-No\n" ,"\nError, ingrese un numero.\n");

@@ -83,7 +83,8 @@ int findPassengerById(Passenger *list, int len, int id) {
 	return posicionADevolver;
 }
 
-int removePassenger(Passenger *list, int len, int id) {
+int removePassenger(Passenger *list, int len, int id)
+{
 	int posicionAVaciar = -1;
 	int retorno = 0;
 	posicionAVaciar = findPassengerById(list, len, id);
