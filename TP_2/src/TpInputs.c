@@ -11,9 +11,6 @@
 #include <ctype.h>
 
 
-
-//Simples scanf, pero en funcion para despues agregarle una validacion
-// uwu
 void rellenarInt(int* variableRecibida, char textoAMostrar[], char textoError[])
 {
 	*variableRecibida = 0;
@@ -29,6 +26,7 @@ void rellenarInt(int* variableRecibida, char textoAMostrar[], char textoError[])
 	}
 
 }
+
 
 void rellenarFloat(float* variableRecibida, char textoAMostrar[], char textoError[])
 {

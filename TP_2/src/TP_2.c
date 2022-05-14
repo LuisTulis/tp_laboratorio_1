@@ -102,7 +102,7 @@ int main(void)
 
 				rellenarArray(flycodeAux, "\nIngrese el codigo de vuelo");
 
-				rellenarInt(&typePassengerAux, "\nIngrese el tipo de pasajero (1-Turista, 2-Promocional, 3-Ejecutivo).", "\nError, ingrese un numero.\n");
+				rellenarInt(&typePassengerAux, "\nIngrese el tipo de pasajero (1-Turista, 2-Promocional, Otro-Ejecutivo).", "\nError, ingrese un numero.\n");
 
 				int validacionAdd = addPassenger(pasajeros, largo, idAux, nameAux, lastNameAux, priceAux, typePassengerAux, flycodeAux);
 				if(validacionAdd == -1)
@@ -165,12 +165,12 @@ int main(void)
 							}
 							case 5:
 							{
-								rellenarInt(&pasajeros[posicionDada].typePassenger, "\nIngrese el tipo de pasajero modificado(1-Turista, 2-Promocional, 3-Ejecutivo).\n", "\nError, ingrese un numero.\n");
+								rellenarInt(&pasajeros[posicionDada].typePassenger, "\nIngrese el tipo de pasajero modificado(1-Turista, 2-Promocional, Otro-Ejecutivo).\n", "\nError, ingrese un numero.\n");
 								break;
 							}
 							case 6:
 							{
-								rellenarInt(&pasajeros[posicionDada].statusFlight, "\nIngrese el estado del vuelo (1-Activo, 2-Inactivo)\n", "\nError, ingrese un numero.\n");
+								rellenarInt(&pasajeros[posicionDada].statusFlight, "\nIngrese el estado del vuelo (1-Activo, Otro-Inactivo)\n", "\nError, ingrese un numero.\n");
 								break;
 							}
 							case 7:
@@ -221,8 +221,8 @@ int main(void)
 			{
 				rellenarInt(&tipoDeOrdenamiento,"\n1- Ordenar por apellido y tipo de pasajero.\n"
 												"2- Ordenar por codigo y estado de vuelo.\n", "\nError, ingrese un numero.\n");
-				rellenarInt(&ordenDeOrdenamiento,"\n1- Ordenar de manera ascendente.\n"
-												"2- Ordenar de manera descendente.\n", "\nError, ingrese un numero.\n");
+				rellenarInt(&ordenDeOrdenamiento,"\n1- Ordenar de manera decreciente.\n"
+												"2- Ordenar de manera creciente.\n", "\nError, ingrese un numero.\n");
 
 				int validacionSort;
 				if(tipoDeOrdenamiento == 1)
@@ -248,7 +248,7 @@ int main(void)
 				promedio = promedioDeArray(pasajeros, largo, total);
 				cantidadMasPromedio = contadorMayorAlPromedio(pasajeros, largo, promedio);
 
-				printf("La suma de todos los precios da %f y el promedio es %f, %d pasajeros superan ese promedio", total, promedio, cantidadMasPromedio);
+				printf("La suma de todos los precios da %.2f y el promedio es %.2f, %d pasajeros superan ese promedio", total, promedio, cantidadMasPromedio);
 
 				break;
 			}

@@ -132,7 +132,7 @@ int sortPassengers(Passenger *list, int len, int order)
 					{
 						if(list[i].typePassenger == list[j].typePassenger)
 						{
-							value = strcmp(list[i].lastName, list[j].lastName);
+							value = strcmp(list[j].lastName, list[i].lastName);
 						}
 					}
 				}
@@ -141,7 +141,14 @@ int sortPassengers(Passenger *list, int len, int order)
 				{
 					if(list[i].typePassenger < list[j].typePassenger)
 					{
-						value = strcmp(list[j].lastName, list[i].lastName);
+						value = 1;
+					}
+					else
+					{
+						if(list[i].typePassenger == list[j].typePassenger)
+						{
+							value = strcmp(list[i].lastName, list[j].lastName);
+						}
 					}
 				}
 
@@ -150,29 +157,9 @@ int sortPassengers(Passenger *list, int len, int order)
 				{
 					value = 0;
 
-					listAux.id = list[i].id;
-					strcpy(listAux.name, list[i].name);
-					strcpy(listAux.lastName, list[i].lastName);
-					listAux.price = list[i].price;
-					strcpy(listAux.flycode, list[i].flycode);
-					listAux.typePassenger = list[i].typePassenger;
-					listAux.statusFlight = list[i].statusFlight;
-
-					list[i].id = list[j].id;
-					strcpy(list[i].name, list[j].name);
-					strcpy(list[i].lastName, list[j].lastName);
-					list[i].price = list[j].price;
-					strcpy(list[i].flycode, list[j].flycode);
-					list[i].typePassenger = list[j].typePassenger;
-					list[i].statusFlight = list[j].statusFlight;
-
-					list[j].id = listAux.id;
-					strcpy(list[j].name, listAux.name);
-					strcpy(list[j].lastName, listAux.lastName);
-					list[j].price = listAux.price;
-					strcpy(list[j].flycode, listAux.flycode);
-					list[j].typePassenger = listAux.typePassenger;
-					list[j].statusFlight = listAux.statusFlight;
+					listAux = list[i];
+					list[i] = list[j];
+					list[j] = listAux;
 
 					j = i+1;
 				}
@@ -199,6 +186,7 @@ int sortPassengersByCode(Passenger *list, int len, int order)
 		{
 			if (list[j].isEmpty != -1)
 			{
+
 				if (order == 1)
 				{
 					if(list[i].statusFlight > list[j].statusFlight)
@@ -209,7 +197,7 @@ int sortPassengersByCode(Passenger *list, int len, int order)
 					{
 						if(list[i].statusFlight == list[j].statusFlight)
 						{
-							value = strcmp(list[i].flycode, list[j].flycode);
+							value = strcmp(list[j].flycode, list[i].flycode);
 						}
 					}
 				}
@@ -224,7 +212,7 @@ int sortPassengersByCode(Passenger *list, int len, int order)
 					{
 						if(list[i].statusFlight == list[j].statusFlight)
 						{
-							value = strcmp(list[j].flycode, list[i].flycode);
+							value = strcmp(list[i].flycode, list[j].flycode);
 						}
 					}
 				}
@@ -234,29 +222,9 @@ int sortPassengersByCode(Passenger *list, int len, int order)
 				{
 					value = 0;
 
-					listAux.id = list[i].id;
-					strcpy(listAux.name, list[i].name);
-					strcpy(listAux.lastName, list[i].lastName);
-					listAux.price = list[i].price;
-					strcpy(listAux.flycode, list[i].flycode);
-					listAux.typePassenger = list[i].typePassenger;
-					listAux.statusFlight = list[i].statusFlight;
-
-					list[i].id = list[j].id;
-					strcpy(list[i].name, list[j].name);
-					strcpy(list[i].lastName, list[j].lastName);
-					list[i].price = list[j].price;
-					strcpy(list[i].flycode, list[j].flycode);
-					list[i].typePassenger = list[j].typePassenger;
-					list[i].statusFlight = list[j].statusFlight;
-
-					list[j].id = listAux.id;
-					strcpy(list[j].name, listAux.name);
-					strcpy(list[j].lastName, listAux.lastName);
-					list[j].price = listAux.price;
-					strcpy(list[j].flycode, listAux.flycode);
-					list[j].typePassenger = listAux.typePassenger;
-					list[j].statusFlight = listAux.statusFlight;
+					listAux = list[i];
+					list[i] = list[j];
+					list[j] = listAux;
 
 					j = i+1;
 				}
@@ -269,50 +237,43 @@ int sortPassengersByCode(Passenger *list, int len, int order)
 
 int printPassenger(Passenger* list, int length)
 {
+	char tipoPasajero[20];
+	char estadoDeVuelo[20];
 	int i;
 	for(i=0;i<length;i++)
 	{
 		if(list[i].isEmpty != -1)
 		{
-			printf("\n------------------\n");
-			printf("%d", list[i].id);
-			printf(" | ");
-			printf(list[i].lastName);
-			printf(" ");
-			printf(list[i].name);
-			printf(" | ");
-			printf(list[i].flycode);
-			printf(" | ");
 
 			if(list[i].typePassenger == 1)
 			{
-				printf("Turista");
+				strcpy(tipoPasajero, "Turista");
 			}
 			else
 			{
 				if(list[i].typePassenger == 2)
 				{
-					printf("Promocional");
+					strcpy(tipoPasajero,"Promocional");
 				}
 				else
 				{
-					printf("Ejecutivo");
+					strcpy(tipoPasajero,"Ejecutivo");
 				}
 			}
 
-			printf(" | ");
-			printf("Costo: %.2f", list[i].price);
-			printf(" | ");
 			if(list[i].statusFlight == 1)
 			{
-				printf("ACTIVO");
+				strcpy(estadoDeVuelo,"ACTIVO");
 			}
 			else
 			{
 
-					printf("INACTIVO");
+				strcpy(estadoDeVuelo,"INACTIVO");
 			}
-			printf("\n------------------\n");
+
+			printf("\n------------------"
+				   "\n %d | %s %s | %s | %s | Costo: $%.f | %s "
+				   "\n------------------\n", list[i].id, list[i].lastName, list[i].name, list[i].flycode, tipoPasajero, list[i].price, estadoDeVuelo);
 		}
 	}
 

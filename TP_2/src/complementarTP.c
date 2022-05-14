@@ -26,7 +26,7 @@ float promedioDeArray(Passenger* valores, int longitud, float total)
 {
 	int i;
 	float promedio = 0;
-	int contador;
+	int contador = 0;
 		for(i = 0; i < longitud; i++)
 		{
 			if(valores[i].isEmpty != -1)
