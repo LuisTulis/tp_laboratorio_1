@@ -76,6 +76,8 @@ int main(void)
 		printf("Error en la inicializacion del sistema, puede provocar errores.");
 	}
 
+	int flagPasajeroIngresado = 0;
+
 	do
 	{
 		printf(	"\n1- Ingresar pasajero.\n"
@@ -109,11 +111,16 @@ int main(void)
 				{
 					printf("Error al ingresar el pasajero. Lista llena o error en el sistema.");
 				}
-
+				flagPasajeroIngresado = 1;
 				break;
 			}
 			case 2:
 			{
+				if(flagPasajeroIngresado == 0)
+				{
+					printf("No hay pasajeros ingresados");
+					break;
+				}
 				rellenarInt(&idABuscar, "\nIngrese el id a modifcar.\n", "\nError, ingrese un numero.\n");
 
 				posicionDada = findPassengerById(pasajeros, largo, idABuscar);
@@ -193,6 +200,11 @@ int main(void)
 			}
 			case 3:
 			{
+				if(flagPasajeroIngresado == 0)
+				{
+					printf("No hay pasajeros ingresados");
+					break;
+				}
 				rellenarInt(&idABuscar, "\nIngrese el id a borrar.\n", "\nError, ingrese un numero.\n");
 
 				mostrarPasajero(pasajeros, largo, idABuscar);
@@ -207,14 +219,16 @@ int main(void)
 						printf("Error al eliminar al pasajero.");
 					}
 				}
-				else
-				{
-					break;
-				}
+
 				break;
 			}
 			case 4:
 			{
+				if(flagPasajeroIngresado == 0)
+				{
+					printf("No hay pasajeros ingresados");
+					break;
+				}
 				rellenarInt(&tipoDeOrdenamiento,"\n1- Ordenar por apellido y tipo de pasajero.\n"
 												"2- Ordenar por codigo y estado de vuelo.\n", "\nError, ingrese un numero.\n");
 				rellenarInt(&ordenDeOrdenamiento,"\n1- Ordenar de manera decreciente.\n"
@@ -250,6 +264,7 @@ int main(void)
 			}
 			case 5:
 			{
+				flagPasajeroIngresado = 1;
 				idAux ++;
 				strcpy(nameAux, "Mario");
 				strcpy(lastNameAux, "Perez");
