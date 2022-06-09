@@ -387,7 +387,6 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListPassenger)
 	for(; indice != NULL; indice = indice->pNextNode)
 	{
 		fwrite(indice->pElement,sizeof(Passenger),1,pFile);
-		printf("escribir \n");
 	}
 	fclose(pFile);
 
