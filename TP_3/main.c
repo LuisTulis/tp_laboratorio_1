@@ -35,7 +35,7 @@ int main()
 
     do{
 
-    	utn_getNumeroEntero(&option,"Que opcion desea realizar?\n"
+    	utn_getNumeroEntero(&option,"\nQue opcion desea realizar?\n"
     							    "\n1. Cargar los datos de los pasajeros desde el archivo data.csv (modo texto)."
     								"\n2. Cargar los datos de los pasajeros desde el archivo data.csv (modo binario)."
     								"\n3. Alta de pasajero"
