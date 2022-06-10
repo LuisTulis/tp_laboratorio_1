@@ -83,11 +83,13 @@ int parser_PassengerFromText(FILE* pFile, LinkedList* pArrayListPassenger)
 int parser_PassengerFromBinary(FILE* pFile , LinkedList* pArrayListPassenger)
 {
 
+	int retorno = 1;
 	Passenger* nuevo;// = Passenger_new();
 	int cant;
 
 	while(!feof(pFile))
 	{
+		retorno = 0;
 		nuevo = Passenger_new();
 		//Leo en binario y pongo los datos en lectura
 		cant=fread(nuevo,sizeof(Passenger),1,pFile);
@@ -113,5 +115,5 @@ int parser_PassengerFromBinary(FILE* pFile , LinkedList* pArrayListPassenger)
 	}
 
 
-    return 1;
+    return retorno;
 }

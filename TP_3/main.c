@@ -75,7 +75,7 @@ int main()
             	flagGuardado = 0;
                 break;
             case 2:
-            	if(flagDatosCargados == 1)
+            	if(flagDatosCargados == 0)
 				{
 					flagDatosCargados = 1;
 					if(controller_loadFromBinary("data.bin",listaPasajeros)==0)
