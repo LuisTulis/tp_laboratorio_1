@@ -108,37 +108,65 @@ int main()
             	flagGuardado = 0;
             	break;
             case 4:
-            	controller_editPassenger(listaPasajeros);
-            	flagGuardado = 0;
-            	break;
-            case 5:
-            	if(controller_removePassenger(listaPasajeros) == 0)
+            	if(ll_len(listaPasajeros) == 0)
             	{
-            		printf("\nNo se elimino al eliminar el pasajero.\n");
+            		printf("No hay pasajeros cargados.");
             	}
             	else
             	{
-            		printf("\nPasajero eliminado correctamente.\n");
-            		contadorManual--;
+					controller_editPassenger(listaPasajeros);
+					flagGuardado = 0;
             	}
-            	flagGuardado = 0;
+            	break;
+            case 5:
+            	if(ll_len(listaPasajeros) == 0)
+				{
+					printf("No hay pasajeros cargados.");
+				}
+            	else
+            	{
+					if(controller_removePassenger(listaPasajeros) == 0)
+					{
+						printf("\nNo se elimino al eliminar el pasajero.\n");
+					}
+					else
+					{
+						printf("\nPasajero eliminado correctamente.\n");
+						contadorManual--;
+					}
+					flagGuardado = 0;
+            	}
             	break;
             case 6:
-            	controller_ListPassenger(listaPasajeros);
+            	if(ll_len(listaPasajeros) == 0)
+				{
+					printf("No hay pasajeros cargados.");
+				}
+            	else
+            	{
+            		controller_ListPassenger(listaPasajeros);
+            	}
             	break;
             case 7:
             	//Ordena las IDs, (en caso de que se hayan agregado pasajeros manualmente
             	//Antes de leer el archivo.
-            	printf("Ordenando pasajeros, puede demorar unos segundos.");
-            	if(controller_sortPassenger(listaPasajeros) == 0)
-            	{
-            		printf("\nLa lista ya estaba ordenada.\n");
-            	}
+            	if(ll_len(listaPasajeros) == 0)
+				{
+					printf("No hay pasajeros cargados.");
+				}
             	else
             	{
-            		printf("\nLista ordenada.\n");
+					printf("Ordenando pasajeros, puede demorar unos segundos.");
+					if(controller_sortPassenger(listaPasajeros) == 0)
+					{
+						printf("\nLa lista ya estaba ordenada.\n");
+					}
+					else
+					{
+						printf("\nLista ordenada.\n");
+					}
+					flagGuardado = 0;
             	}
-            	flagGuardado = 0;
             	break;
             case 8:
             	// GUARDO LOS DATOS EN UN ARCHIVO DIFERNTE PARA NO MODIFICAR EL DADO EN EL TP
