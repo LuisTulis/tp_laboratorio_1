@@ -394,6 +394,16 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListPassenger)
 
 }
 
+
+
+/** \brief Lee la lista y corrige los IDs cargados manualmente.
+ *
+ * \param pArrayListPassenger LinkedList*
+ * \path int contador
+ * \
+ * \return int
+ *
+ */
 int controller_CorregirIds(LinkedList* pArrayListPassenger, int contador)
 {
 	int retorno = 0;

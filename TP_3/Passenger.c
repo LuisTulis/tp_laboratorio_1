@@ -11,6 +11,14 @@
 #include "string.h"
 #include "ctype.h"
 
+
+/** \brief Modificar el ID del pasajero.
+ *
+ * \param id int
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_setId(Passenger* this,int id)
 {
 	int retorno = 0;
@@ -22,6 +30,15 @@ int Passenger_setId(Passenger* this,int id)
 	}
 	return retorno;
 }
+
+
+/** \brief Obtiene el id del pasajero.
+ *
+ * \param id int*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_getId(Passenger* this,int* id)
 {
 	int retorno = 0;
@@ -33,6 +50,13 @@ int Passenger_getId(Passenger* this,int* id)
 	return retorno;
 }
 
+/** \brief Modificar el nombre del pasajero.
+ *
+ * \param nombre char*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_setNombre(Passenger* this,char* nombre)
 {
 	int retorno = 1;
@@ -44,6 +68,15 @@ int Passenger_setNombre(Passenger* this,char* nombre)
 		return retorno;
 
 }
+
+
+/** \brief obtener el nombre del pasajero.
+ *
+ * \param nombre char*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_getNombre(Passenger* this,char* nombre)
 {
 	int retorno = 0;
@@ -55,6 +88,13 @@ int Passenger_getNombre(Passenger* this,char* nombre)
 	return retorno;
 }
 
+/** \brief Modificar el apellido del pasajero.
+ *
+ * \param apellido char*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_setApellido(Passenger* this,char* apellido)
 {
 	int retorno = 1;
@@ -66,6 +106,13 @@ int Passenger_setApellido(Passenger* this,char* apellido)
 
 		return retorno;
 }
+/** \brief Obtener el apellido del pasajero.
+ *
+ * \param apellido char*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_getApellido(Passenger* this,char* apellido)
 {
 	int retorno = 0;
@@ -77,6 +124,13 @@ int Passenger_getApellido(Passenger* this,char* apellido)
 	return retorno;
 }
 
+/** \brief Modificar el codigo del vuelo.
+ *
+ * \param codigoVuelo char*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_setCodigoVuelo(Passenger* this,char* codigoVuelo)
 {
 	int retorno = 1;
@@ -88,6 +142,13 @@ int Passenger_setCodigoVuelo(Passenger* this,char* codigoVuelo)
 
 		return retorno;
 }
+/** \brief Obtener el codigo del vuelo.
+ *
+ * \param codigoVuelo char*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_getCodigoVuelo(Passenger* this,char* codigoVuelo)
 {
 	int retorno = 0;
@@ -99,6 +160,13 @@ int Passenger_getCodigoVuelo(Passenger* this,char* codigoVuelo)
 	return retorno;
 }
 
+/** \brief Modificar el estado del vuelo.
+ *
+ * \param estadoVuelo char*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_setEstadoVuelo(Passenger* this,char* estadoVuelo)
 {
 	int retorno = 1;
@@ -111,6 +179,13 @@ int Passenger_setEstadoVuelo(Passenger* this,char* estadoVuelo)
 		return retorno;
 }
 
+/** \brief Obtener el estado del vuelo.
+ *
+ * \param estadoVuelo char*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_getEstadoVuelo(Passenger* this,char* estadoVuelo)
 {
 	int retorno = 0;
@@ -122,6 +197,13 @@ int Passenger_getEstadoVuelo(Passenger* this,char* estadoVuelo)
 	return retorno;
 }
 
+/** \brief Modificar el tipo del pasajero.
+ *
+ * \param tipoPasajero int
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_setTipoPasajero(Passenger* this,int tipoPasajero)
 {
 	int retorno = 0;
@@ -132,6 +214,13 @@ int Passenger_setTipoPasajero(Passenger* this,int tipoPasajero)
 	}
 	return retorno;
 }
+/** \brief Obtener el tipo del pasajero.
+ *
+ * \param tipoPasajero int*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_getTipoPasajero(Passenger* this,int* tipoPasajero)
 {
 	int retorno = 0;
@@ -143,6 +232,13 @@ int Passenger_getTipoPasajero(Passenger* this,int* tipoPasajero)
 	return retorno;
 }
 
+/** \brief Modificar el precio del pasajero.
+ *
+ * \param precio float
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_setPrecio(Passenger* this,float precio)
 {
 	int retorno = 0;
@@ -153,6 +249,14 @@ int Passenger_setPrecio(Passenger* this,float precio)
 	}
 	return retorno;
 }
+
+/** \brief Obtener el precio del pasajero.
+ *
+ * \param precio float*
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_getPrecio(Passenger* this,float* precio)
 {
 	int retorno = 0;
@@ -164,6 +268,12 @@ int Passenger_getPrecio(Passenger* this,float* precio)
 	return retorno;
 }
 
+
+/** \brief Inicializa al pasajero.
+ *
+ * \return Passenger*
+ *
+ */
 Passenger* Passenger_new()
 {
 	Passenger* nuevoPasajero = NULL;
@@ -183,6 +293,17 @@ Passenger* Passenger_new()
 
 }
 
+/** \brief Rellena el pasajero.
+ * \param idStr char*
+ * \param nombreStr char*
+ * \param apellidoStr char*
+ * \param tipoPasajeroStr char*
+ * \param precioStr char*
+ * \param flycodeStr char*
+ * \param estadoStr char*
+ * \return Passenger*
+ *
+ */
 Passenger* Passenger_newParametros(char* idStr,char* nombreStr, char* apellidoStr, char* tipoPasajeroStr, char* precioStr, char* flycodeStr, char* estadoStr)
 {
 	Passenger* nuevoPasajero = Passenger_new();
@@ -240,6 +361,11 @@ Passenger* Passenger_newParametros(char* idStr,char* nombreStr, char* apellidoSt
 }
 
 //-----------------------------------------------------//
+
+/** \brief Printea la lista completa.
+ * \param pArrayListPassenger LinkedList*
+ *
+ */
 void Passenger_list(LinkedList* pArrayListPassenger)
 {
 	Node* indice = pArrayListPassenger->pFirstNode;
@@ -253,6 +379,10 @@ void Passenger_list(LinkedList* pArrayListPassenger)
 	}
 }
 
+/** \brief Printea un pasajero.
+ * \param this Passenger*
+ *
+ */
 void Passenger_print(Passenger* this)
 {
 	char tipoPasajeroAux[15];
@@ -287,11 +417,22 @@ void Passenger_print(Passenger* this)
 	}
 }
 
+/** \brief Devuelve el id a usar.
+ * \param pArrayListPassenger LinkedList*
+ * \return int
+ *
+ */
 int Passenger_idDisponible(LinkedList* pArrayListPassenger)
 {
 	return ll_len(pArrayListPassenger) +1;
 }
 
+/** \brief Devuelve el pasajero buscado por id.
+ * \param pArrayListPassenger LinkedList*
+ * \param idABuscar int
+ * \return void*
+ *
+ */
 void* Passenger_busqueda(LinkedList* pArrayListPassenger, int idABuscar)
 {
 	Node* indice = pArrayListPassenger->pFirstNode;
