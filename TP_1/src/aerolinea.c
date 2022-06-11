@@ -76,8 +76,7 @@ void opcion3(float kilometros, float precioLatam, float precioAerolineas, float*
 
 void opcion4(float kilometros, float precioDebitoLatam, float precioDebitoAerolineas, float precioCreditoLatam, float precioCreditoAerolineas, float precioBitcoinLatam, float precioBitcoinAerolineas, float precioUnitarioLatam, float precioUnitarioAerolineas, float diferenciaPrecios)
 {
-	if(precioUnitarioLatam > 1 && precioUnitarioAerolineas > 1)
-	{
+
 		printf(		"Kilometros: %.2f"
 
 					"\nLatam: \nPrecio con tarjeta de debito: $ %.2f"
@@ -93,11 +92,5 @@ void opcion4(float kilometros, float precioDebitoLatam, float precioDebitoAeroli
 
 					"\n\nLa diferencia de precio es : $ %.2f \n", kilometros, precioDebitoLatam, precioCreditoLatam, precioBitcoinLatam, precioUnitarioLatam, precioDebitoAerolineas, precioCreditoAerolineas, precioBitcoinAerolineas, precioUnitarioAerolineas, diferenciaPrecios);
 
-	}
-	else
-	{
-
-			printf("Error, calculos o datos no ingresados.");
-	}
 }
 

@@ -32,6 +32,11 @@ int main(void)
 	float precioUnitarioAerolineas;
 	float diferenciaPrecios;
 
+	int flagCargaKM = 0;
+	int flagCargaPrecio = 0;
+	int flagCalculo = 0;
+
+
 	do
 	{
 
@@ -58,16 +63,33 @@ int main(void)
 		case 1:
 			printf("\n\n Ingrese la cantidad de kilometros del viaje.");
 			scanf("%f", &kilometros);
+			flagCargaKM = 1;
 			break;
 		case 2:
+			flagCargaPrecio = 1;
 			opcion2(respuestaOpcion2, &precioLatam, &precioAerolineas);
 			break;
 		case 3:
-			printf("\nCalculando precios. . . \n");
-			opcion3(kilometros, precioLatam, precioAerolineas, &precioDebitoLatam, &precioDebitoAerolineas, &precioCreditoLatam, &precioCreditoAerolineas, &precioBitcoinLatam, &precioBitcoinAerolineas, &precioUnitarioLatam, &precioUnitarioAerolineas, &diferenciaPrecios);
+			if(flagCargaKM == 1 && flagCargaPrecio == 1)
+			{
+				flagCalculo = 1;
+				printf("\nCalculando precios. . . \n");
+				opcion3(kilometros, precioLatam, precioAerolineas, &precioDebitoLatam, &precioDebitoAerolineas, &precioCreditoLatam, &precioCreditoAerolineas, &precioBitcoinLatam, &precioBitcoinAerolineas, &precioUnitarioLatam, &precioUnitarioAerolineas, &diferenciaPrecios);
+			}
+			else
+			{
+				printf("Ingrese los datos antes de calcular.");
+			}
 			break;
 		case 4:
-			opcion4(kilometros, precioDebitoLatam, precioDebitoAerolineas, precioCreditoLatam, precioCreditoAerolineas, precioBitcoinLatam, precioBitcoinAerolineas, precioUnitarioLatam, precioUnitarioAerolineas, diferenciaPrecios);
+			if(flagCalculo == 1)
+			{
+				opcion4(kilometros, precioDebitoLatam, precioDebitoAerolineas, precioCreditoLatam, precioCreditoAerolineas, precioBitcoinLatam, precioBitcoinAerolineas, precioUnitarioLatam, precioUnitarioAerolineas, diferenciaPrecios);
+			}
+			else
+			{
+				printf("Los precios no han sido calculados.");
+			}
 			break;
 		case 5:
 			kilometros = 7090.0;
