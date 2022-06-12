@@ -63,6 +63,12 @@ int main(void)
 		case 1:
 			printf("\n\n Ingrese la cantidad de kilometros del viaje.");
 			scanf("%f", &kilometros);
+			while(!(kilometros > 0))
+			{
+				printf("La cantidad tiene que ser mayor a 0");
+				scanf("%f", &kilometros);
+			}
+			fflush(stdin);
 			flagCargaKM = 1;
 			break;
 		case 2:
